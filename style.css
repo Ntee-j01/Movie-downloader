@@ -1,0 +1,386 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: #f0f4f8;
+}
+
+.page-title {
+  text-align: center;
+  font-size: 2.5em;
+  color: #1e90ff;
+  margin: 20px 0;
+}
+
+.movie-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.movie {
+  background-color: white;
+  border-radius: 8px;
+  overflow: hidden;
+  margin: 10px;
+  padding: 20px;
+  transition: box-shadow 0.3s ease;
+  width: 250px;
+  text-align: center;
+}
+
+.movie img {
+  width: 100%;
+  border-bottom: 2px solid #1e90ff;
+  transition: transform 0.3s ease;
+}
+
+.movie:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transform: translateY(-10px);
+}
+
+.movie img:hover {
+  transform: scale(1.05);
+}
+
+.movie-title {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin: 10px 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Custom Download Button */
+/* Custom Download Button */
+.download-btn {
+  background: linear-gradient(45deg, #1e90ff, #00bfff); /* Blue gradient */
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  text-align: center;
+  border-radius: 30px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 16px;
+  text-transform: uppercase;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow */
+  margin-top: 10px;
+  transition: all 0.3s ease;
+  letter-spacing: 1px;
+}
+
+.download-btn:hover {
+  background: linear-gradient(45deg, #00bfff, #1e90ff); /* Reverse gradient */
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15); /* Stronger shadow */
+  transform: translateY(-2px); /* Slight lift effect */
+}
+
+.download-btn:active {
+  transform: scale(0.98); /* Press effect */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Stronger pressed shadow */
+}
+/* Customized Next/Previous Buttons */
+.control-btn {
+  padding: 10px 20px;
+  background-color: #00509e;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 1.2em;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.control-btn:hover {
+  background-color: #1e90ff;
+  transform: scale(1.1);
+}
+
+.controllers {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.search-controller {
+  display: flex;
+}
+
+#search input[type="text"] {
+  padding: 10px;
+  width: 250px;
+  font-size: 16px;
+  border-radius: 30px;
+  border: 1px solid #ccc;
+  margin-right: 10px;
+}
+
+#search input[type="submit"] {
+  padding: 10px 20px;
+  background-color: #1e90ff;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 30px;
+  transition: background-color 0.3s ease;
+}
+
+#search input[type="submit"]:hover {
+  background-color: #00509e;
+}
+
+#results {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+#pagination {
+  text-align: center;
+  margin: 20px 0;
+  font-size: 18px;
+  color: #1e90ff;
+}
+
+#page, #total {
+  font-weight: bold;
+}
+
+.Overlay {
+  background-color: rgba(0, 0, 0, 0.96);
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  display: none;
+}
+
+.close {
+  color: #fff;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 24px;
+  cursor: pointer;
+  transition: all 0.6s ease-in;
+}
+
+.close:hover {
+  color: #1e90ff;
+  transform: rotate(360deg);
+}
+
+#searchHeading {
+  display: none;
+}
+
+#searchHeading span {
+  color: #1e90ff;
+}
+
+.info {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 800px;
+  margin: 0 auto;
+  color: #fff;
+  animation: channelInfo 1s ease-in;
+}
+
+.info img {
+  margin-right: 20px;
+  width: 300px;
+  height: auto;
+}
+
+.info ul {
+  list-style: none;
+}
+
+.info ul li {
+  padding: 10px;
+}
+
+.info a {
+  color: #1e90ff;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+
+.info a:hover {
+  color: yellow;
+}
+
+@keyframes channelInfo {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 3;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  background-color: white;
+  margin: 10% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+.modal-content img {
+  max-width: 100%;
+  border-radius: 8px;
+}
+
+.modal-content h2 {
+  color: #1e90ff;
+}
+
+@media screen and (max-width: 1095px) {
+  .movie-container, .info {
+    max-width: 100%;
+    margin: 0 auto;
+  }
+  .info {
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 560px) {
+  #results, .controllers {
+    flex-direction: column;
+  }
+  .controllers, .search-controller {
+    margin-top: 20px;
+  }
+  #search input[type="text"], #search input[type="submit"] {
+    width: 100%;
+    margin: 2px;
+  }
+  .movie-title {
+    width: 100%;
+  }
+}
+
+/* Responsive layout for the overlay containing the movie details */
+.movie-thumbnail {
+  width: 100%;
+  max-width: 250px;
+  margin-bottom: 20px;
+}
+
+.movie-details {
+  width: 100%;
+  padding: 10px;
+  text-align: left;
+}
+
+/* Flexbox for better responsiveness */
+.overlay-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+
+.overlay-content .movie-thumbnail {
+  flex: 1 1 300px; /* Ensures that the movie image takes 1 part of the space */
+}
+
+.overlay-content .movie-details {
+  flex: 2 1 600px; /* Movie details section takes 2 parts of the space */
+}
+
+/* For smaller screens, stack the image and details */
+@media screen and (max-width: 768px) {
+  .overlay-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .movie-thumbnail {
+    margin: 0 auto;
+  }
+
+  .movie-details {
+    text-align: center;
+  }
+
+  .movie-details ul {
+    padding: 0;
+  }
+}
+
+/* Style for the download links */
+.download-link {
+  display: inline-block;
+  background: #1e90ff;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 20px;
+  margin: 10px 0;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.download-link:hover {
+  background: #00bfff;
+}
+
+/* Customize the movie title */
+.movie-details h1 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+/* Styling the torrent info list */
+.movie-details ul {
+  list-style: none;
+  padding: 0;
+}
+
+.movie-details ul li {
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+/* Style the trailer video for responsiveness */
+.trailer iframe {
+  width: 100%;
+  max-width: 560px;
+  height: auto;
+}
+
+.trailer {
+  margin: 20px 0;
+}
+
+/* Ensure buttons don't overflow the screen */
+.download-btn {
+  width: 100%;
+  max-width: 180px;
+  margin-top: 15px;
+}

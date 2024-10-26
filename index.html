@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YTS Movie API</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="movie-container">
+
+    <h1 class="page-title">Download Movies</h1>
+
+    <div class="controllers">
+      <div class="btn-controller">
+        <button id="prev" class="control-btn">⟵ Previous</button>
+        <button id="next" class="control-btn">Next ⟶</button>
+        <h1 id="searchHeading"></h1>
+      </div>
+
+      <div class="search-controller">
+        <form id="search">
+          <input type="text" placeholder="Search movie..." id="query" autocomplete="off">
+          <input type="submit" value="Search">
+        </form>
+      </div>
+    </div>
+
+    <h1 id="pagination">Page: <span id="page"></span>/<span id="total"></span></h1>
+
+    <div id="results">
+      <!-- Example of a movie result -->
+      <div class="movie">
+  <img src="movie-thumbnail.jpg" alt="Movie Thumbnail">
+  <h2 class="movie-title">Movie Title</h2>
+  <button class="download-btn" onclick="openModal()">Download Movie</button>
+</div>   </div>
+
+    <div class="Overlay">
+      <div class="close" id="closeOverlay">&times;</div>
+      <div class="info"></div>
+    </div>
+
+    <div id="errors"></div>
+  </div>
+
+  <!-- Modal for Movie Info -->
+  <div id="movieModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <h2 id="movieTitle">Movie Title</h2>
+      <img id="moviePoster" src="" alt="Movie Poster">
+      <p id="movieDescription">Movie description goes here...</p>
+      <a id="downloadLink" href="#" class="download-btn">Download Movie</a>
+    </div>
+  </div>
+
+  <script src="movies.js"></script>
+</body>
+
+</html>
