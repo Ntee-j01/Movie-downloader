@@ -1,4 +1,4 @@
 # Movie-downloader
-A cool 😎 movie downloader web page that uses API to download movies 
+Feel free to edit and modify this repo
 
-<img src="https://i.postimg.cc/s2RKF20x/Screenshot-20241026-022040.jpg" width="200px" height="200px" >
+<img src="https://i.postimg.cc/s2RKF20x/Screenshot-20241026-022040.jpg" width="500px" height="500px" >
